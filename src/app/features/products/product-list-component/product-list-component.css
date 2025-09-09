@@ -1,0 +1,34 @@
+main {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+li {
+    width: 20%;
+    margin: 10px 10px;
+}
+
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 200px;
+    /* background-image: url("/assets/images/hero-burger.jpg"); */
+    background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url("/assets/images/hero-burger.jpg");
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    padding-top: 30px;
+}
+
+h1 {
+    font-size: 200px;
+}
