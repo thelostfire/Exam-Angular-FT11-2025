@@ -1,0 +1,14 @@
+* {
+    background-color: black;
+}
+
+section {
+    height: 100vh;
+}
+
+a {
+    background-color: #f89a2f;
+    color: white;
+    width: 10%;
+    padding: 8px 12px;
+}

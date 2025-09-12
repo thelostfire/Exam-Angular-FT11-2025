@@ -1,0 +1,15 @@
+header {
+    background-color: black;
+}
+
+a {
+    padding: 8px 16px;
+}
+
+.register-link {
+    background-color: #272727;
+}
+
+.login-link {
+    background-color: #f89a2f;
+}
