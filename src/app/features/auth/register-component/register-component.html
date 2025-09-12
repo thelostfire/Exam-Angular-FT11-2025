@@ -1,0 +1,54 @@
+<section>
+    <h1 class="text-7xl font-extrabold text-white pt-[6rem] pb-[2rem]" >Je m'inscris</h1>
+    @if (errorMsg) {
+        <div class="text-red-600 text-2xl">{{ errorMsg }}</div>
+    }
+    <form [formGroup]="form" (ngSubmit)="submit()" class="text-center text-white space-y-4">
+        <div class="text-center m-auto">
+            <input 
+                type="text"
+                formControlName="name"
+                class="w-[50%] rounded-md p-2 focus:outline-none focus:ring"
+                placeholder="Nom">
+            @if(name.touched && name.invalid) {
+                <p class="text-sm text-red-600 mt-1">
+                    @if(name.errors?.['required']) { Veuillez entrer votre nom }
+                    @else if (name.errors?.['minlength']) { Votre nom doit avoir au moins 3 lettres }
+                </p>
+            }
+        </div>
+
+        <div class="flex m-auto justify-between w-[50%]">
+            <input 
+                type="email"
+                formControlName="email"
+                class="w-[49%] rounded-md p-2 focus:outline-none focus:ring mt-[12px]"
+                placeholder="E-mail">
+            @if(email.touched && email.invalid) {
+                <p class="text-sm text-red-600 mt-1 block">
+                    @if(email.errors?.['required']) { Veuillez entrer votre email }
+                    @else if (email.errors?.['email']) { Veuillez entrer un email valide }
+                </p>
+            }
+            <input 
+                type="password"
+                formControlName="password"
+                class="w-[49%] rounded-md p-2 focus:outline-none focus:ring mt-[12px]"
+                placeholder="Mot de passe">
+            @if(password.touched && password.invalid) {
+                <p class="text-sm text-red-600 mt-1">
+                    @if(password.errors?.['required']) { Veuillez entrer un mot de passe }
+                    @else if (password.errors?.['minlength']) { Votre mot de passe doit comporter au moins 8 caractères }
+                </p>
+            }
+        </div>
+
+        <button
+            type="submit"
+            class="w-[12rem] p-2 rounded-md m-[2rem]"
+            [disabled]="form.invalid">
+            Confirmer
+        </button>
+
+    </form>
+</section>

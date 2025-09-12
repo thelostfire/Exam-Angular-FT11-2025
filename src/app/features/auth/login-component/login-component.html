@@ -1,0 +1,42 @@
+<section>
+    <h1 class="text-7xl font-extrabold text-white pt-[6rem] pb-[2rem]">Je me connecte</h1>
+    @if(errorMsg) {
+        <div class="text-red-600 text-2xl">{{ errorMsg }}</div>
+    }
+
+    <form [formGroup]="form" (ngSubmit)="submit()" class="text-center text-white space-y-4">
+        <div class="text-center m-auto">
+            <input 
+                type="email"
+                formControlName="email"
+                class="w-[50%] rounded-md p-2 focus:outline-none focus:ring"
+                placeholder="E-mail">
+            @if (f.email.touched && f.email.invalid) {
+                <p class="text-2xl text-red-600">
+                    @if(f.email.errors?.['required']) { Veuillez entrer votre e-mail }
+                    @else if(f.email.errors?.['email']) { Veuillez entrer un e-mail valide }
+                </p>
+            }
+        </div>
+        <div class="text-center m-auto">
+            <input 
+                type="password"
+                formControlName="password"
+                class="w-[50%] rounded-md p-2 focus:outline-none focus:ring mt-[12px]"
+                placeholder="Mot de passe">
+            @if(f.password.touched && f.password.invalid) {
+                <p class="text-2xl text-red-600">
+                    @if(f.password.errors?.['required']) { Veuillez entrer votre mot de passe }
+                    @else if(f.password.errors?.['minlength']) { Veuillez entrer un mot de passe valide }
+                </p>
+            }
+        </div>
+
+        <button 
+            type="submit"
+            class="w-[12rem] p-2 rounded-md m-[2rem]"
+            [disabled]="form.invalid">
+            Connexion
+        </button>
+    </form>
+</section>

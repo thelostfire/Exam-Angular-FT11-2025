@@ -30,9 +30,15 @@ export class AuthService {
 
   me() {
     return this.http.get<{ user: User }>(`${this.apiUrl}/me`).pipe(
-      tap(res => this.hydrateAuth)
+      tap(({ user }) => this.user.set(user))
     );
-  } // A FAIRE, PAS TERMINE LE hydrateAuth(res) DECONNE
+  } 
+
+  login(payload: { email: string; password: string }) {
+    return this.http.post<AuthResponse>(`${this.apiUrl}/login`, payload).pipe(
+      tap(res => this.hydrateAuth(res))
+    );
+  }
 
   logout() {
     this.user.set(null);
