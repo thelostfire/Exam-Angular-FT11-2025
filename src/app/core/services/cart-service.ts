@@ -6,8 +6,8 @@ import { Product } from '../models/product';
   providedIn: 'root'
 })
 export class CartService {
-    private readonly _cart$ = new BehaviorSubject<Product[]>([]);
-    readonly cart$ = this._cart$.asObservable();
+    private _cart$ = new BehaviorSubject<Product[]>([]);
+    cart$ = this._cart$.asObservable();
 
     get cart(): Product[] {
       return this._cart$.value;

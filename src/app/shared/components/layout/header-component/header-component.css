@@ -2,8 +2,16 @@ header {
     background-color: black;
 }
 
-a {
+a, button {
     padding: 8px 16px;
+}
+
+button {
+    background-color: #ff5757;
+}
+
+.checkout-link {
+    background-color: grey;
 }
 
 .register-link {

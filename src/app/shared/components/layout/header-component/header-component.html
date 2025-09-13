@@ -1,11 +1,19 @@
 <header class="p-4 text-white">
 	<div class="container flex justify-between h-16 mx-auto">
-		<a rel="noopener noreferrer" href="#" aria-label="Back to homepage" class="flex items-center p-2">
+		<a rel="noopener noreferrer" routerLink="/" aria-label="Back to homepage" class="flex items-center p-2">
 			<img src="/assets/images/logo.png" alt="">
 		</a>
-		<div class="items-center flex-shrink-0 hidden lg:flex">
-			<a routerLink="/register" class="register-link text-white m-1 rounded-md">Inscription</a>
-			<a routerLink="/login" class="login-link text-white m-1 rounded-md">Connexion</a>
-		</div>
+        @if (auth.isAuthenticated()) {
+            <div class="items-center flex-shrink-0 hidden lg:flex">
+                <a routerLink="/checkout" class="checkout-link text-white m-1 rounded-md">Panier</a>
+                <button (click)="auth.logout()" class="text-white m-1 rounded-md">Me déconnecter</button>
+            </div>
+        } @else {
+            <div class="items-center flex-shrink-0 hidden lg:flex">
+                <a routerLink="/checkout" class="checkout-link text-white m-1 rounded-md">Panier</a>
+                <a routerLink="/register" class="register-link text-white m-1 rounded-md">Inscription</a>
+                <a routerLink="/login" class="login-link text-white m-1 rounded-md">Connexion</a>
+            </div>
+        }
 	</div>
 </header>

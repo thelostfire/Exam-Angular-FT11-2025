@@ -9,6 +9,6 @@
     <p class="product-price">{{ price }} €</p>
     <div class="buttons-container">
         <a routerLink="/product/{{ id }}"> ! </a>
-        <app-button-component [text]="'Ajouter au panier'"></app-button-component>
+        <app-button-component [text]="'Ajouter au panier'" [disabled]="!isAvailable" (clicked)="onAddToCart(currentProduct)!"></app-button-component>
     </div>
 </article>

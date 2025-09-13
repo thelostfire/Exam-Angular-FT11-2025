@@ -1,14 +1,14 @@
 <main>
-    <section class="hero-section m-6">
+    <section class="hero-section mb-6">
         <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum incidunt ducimus at. Atque, odio rerum, sint temporibus nulla corrupti sequi ipsam, porro pariatur quam consequuntur? Quia enim veniam aperiam temporibus?</p>
-        <h1 class="text-center font-extrabold text-[#f89a2f]">Burgerito</h1>
+        <h1 class="text-center font-extrabold text-[#f89a2f]">BURGERITO</h1>
     </section>
     
     <section>
         <ul>
             @for(product of products$ | async; track $index) {
                 <li>
-                    <app-product-card-component [id]="product.id" [name]="product.name" [imageUrl]="product.imageUrl" [price]="product.price" [isAvailable]="product.isAvailable"></app-product-card-component>
+                    <app-product-card-component [id]="product.id" [name]="product.name" [imageUrl]="product.imageUrl" [price]="product.price" [isAvailable]="product.isAvailable" [currentProduct]="product"></app-product-card-component>
                 </li>
             }
         </ul>

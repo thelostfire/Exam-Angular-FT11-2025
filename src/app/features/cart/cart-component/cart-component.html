@@ -1,9 +1,25 @@
-<a routerLink="/">↩️ Retour à l'accueil</a>
 <section>
-    <h2 class="font-extrabold text-8xl">Panier</h2>
-    <div>
-        <ul>
-            
-        </ul>
-    </div>
+    <a routerLink="/">↩️ Retour à l'accueil</a>
+    <h1 class="font-extrabold text-8xl">Panier</h1>
+    @if (cart()?.length === 0) {
+        <div>
+            <p>Votre panier est vide</p>
+        </div>
+    }@else {
+        <div class="flex">
+            <ul class="w-[50%]">
+                @for (product of cart(); track $index) {
+                    <li class="mt-2">
+                        <app-cart-item-component [product]="product" (remove)="onRemove(product)"></app-cart-item-component>
+                    </li>
+                }
+            </ul>
+            <div class="checkout-container">
+                <h3 class="font-semibold">Récapitulatif</h3>
+                <p>Total:</p>
+                <p class="font-extrabold">{{ total() | currency: 'EUR': 'symbol' }}</p>
+                <button (click)="clear()" class="order-button">Commander</button>
+            </div>
+        </div>
+    }
 </section>

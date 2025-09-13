@@ -27,8 +27,13 @@ li {
     background-position: center;
     border-radius: 20px;
     padding-top: 30px;
+
+    p {
+        margin: 0 20%;
+    }
 }
 
 h1 {
-    font-size: 200px;
+    font-size: 180px;
+    line-height: 1;
 }

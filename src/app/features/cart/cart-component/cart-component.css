@@ -1,0 +1,29 @@
+section {
+    height: 100vh;
+    background-color: black;
+    color: white;
+    a {
+        color: gray;
+    }
+    .checkout-container {
+        background-color: #f89a2f;
+        color: black;
+        height: 20vh;
+        margin: 8px auto;
+        padding: 8px 1rem;
+        border-radius: 6px;
+        width: 20%;
+    }
+    .order-button {
+        background-color: black;
+        color: white;
+        padding: 4px 8px;
+        border-radius: 6px;
+        margin: 1rem auto;
+        width: 60%;
+    }
+}
+
+h1 {
+    padding-top: 4rem;
+}

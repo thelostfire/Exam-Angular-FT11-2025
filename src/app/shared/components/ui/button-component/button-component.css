@@ -1,7 +1,11 @@
 button {
     text-align: center;
-    background-color: black;
+    background-color: #f89a2f;
     padding: 4px 8px;
     color: white;
     border-radius: 8px;
+    &:disabled {
+        background-color: #b0b0b0;
+        cursor: not-allowed;
+    }
 }
