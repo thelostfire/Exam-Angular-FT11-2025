@@ -1,6 +1,6 @@
 # ExamAngularFT11
 
-Examen dans le cadre du module Angular de la formation DWWM FT11
+Examen dans le cadre du module Angular de la formation DWWM FT11  
 Les sections qui suivent sont les réponses demandées dans le sujet de l'examen
 
 ## Justification des choix techniques
