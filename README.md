@@ -1,59 +1,32 @@
 # ExamAngularFT11
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.6.
+Examen dans le cadre du module Angular de la formation DWWM FT11
+Les sections qui suivent sont les réponses demandées dans le sujet de l'examen
 
-## Development server
+## Justification des choix techniques
 
-To start a local development server, run:
+### Composants
+- Boutons définis en tant que composants réutilisables (avec plusieurs propriétés modifiables en fonction du rôle du bouton)
+- Layout (header) réutilisé sur toutes les pages du site
+- Les pages sont traitées comme 'features'
 
-```bash
-ng serve
-```
+### Services
+- Services pour l'authentification, le panier, et les produits
+- Chaque service s'occupe de centraliser les appels et transformations et simplifie les composants
+- Par exemple, le service cart (panier) gère le contenu du panier et s'occupe d'attribuer un id unique à chaque produit ajouté. Cela permet la simplification du retrait de produits du panier.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### Pipes
+- Utilisation d'une pipe monnaie (CurrencyPipe) pour formatter le prix en € et ajouter de la cohérence à l'UI (bien faire comprendre qu'il s'agit du prix du produit / total du panier)
 
-## Code scaffolding
+### DTO
+- Pas de mapping dans ce site, les produits sont gardés tels quels pour simplifier leur utilisation (on pourrait effectuer du mapping au niveau de leur date de création/modification avec string => Date)
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### Arborescence
+- Le site a une arborescence claire (features pour les pages, shared pour les composants réutilisables, core pour les services, modèles, interceptors...)
 
-```bash
-ng generate component component-name
-```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Instructions
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Le site utilise tailwind (https://tailwindcss.com/docs/installation/framework-guides/angular)
+- Pas de configuration de la base API nécessaire
+- Pour lancer le serveur de développement, utiliser les commandes ```ng serve``` ou ```npm start```
