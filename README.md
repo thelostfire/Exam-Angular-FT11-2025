@@ -24,6 +24,9 @@ Les sections qui suivent sont les réponses demandées dans le sujet de l'examen
 ### Arborescence
 - Le site a une arborescence claire (features pour les pages, shared pour les composants réutilisables, core pour les services, modèles, interceptors...)
 
+### Guard
+- Utilisation d'authguard sur la page de confirmation de commande: impossible de commander si pas connecté, force un retour sur la page de login
+
 
 ## Instructions
 
