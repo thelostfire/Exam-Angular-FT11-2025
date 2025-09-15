@@ -5,6 +5,8 @@ import { AsyncPipe } from '@angular/common';
 import { ButtonComponent } from "../../../shared/components/ui/button-component/button-component";
 import { ProductCardComponent } from "../../../shared/components/ui/product-card-component/product-card-component";
 import { map, switchMap } from 'rxjs';
+import { CartService } from '../../../core/services/cart-service';
+import { Product } from '../../../core/models/product';
 
 @Component({
   selector: 'app-product-detail-component',
@@ -15,6 +17,7 @@ import { map, switchMap } from 'rxjs';
 export class ProductDetailComponent {
   private route = inject(ActivatedRoute)
   private products = inject(ProductService)
+  cart = inject(CartService)
   productId: string = ''
 
   product$ = this.route.paramMap.pipe(
@@ -22,6 +25,9 @@ export class ProductDetailComponent {
     switchMap(id => this.products.getOne(id))
   )
   
+  onAddToCart(product: Product) {
+      this.cart.add(product);
+    }
 
   // product = this.products.getOne(this.productId);
   productsList = this.products.getAll();

@@ -33,8 +33,5 @@ export class ProductCardComponent {
 
   onAddToCart(product: Product) {
     this.cart.add(product);
-    console.log('clicked');
-    console.log(this.cart.cart$)
-    console.log(this.cart.cart)
   }
 }

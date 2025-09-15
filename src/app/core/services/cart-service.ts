@@ -14,7 +14,20 @@ export class CartService {
     }
 
     add(product: Product) {
-      const updated = [...this.cart, product];
+
+
+// On attribue in ID unique au product de manière très moche pour pouvoir les supprimer individuellement
+      const newProduct: Product = {
+            name: product.name,
+            description: product.description,
+            price: product.price,
+            imageUrl:product.imageUrl,
+            isAvailable: product.isAvailable,
+            createdAt: product.createdAt,
+            updatedAt: product.updatedAt,
+            id: product.id.concat("", (Math.random() * 10000000).toString())
+        } 
+      const updated = [...this.cart, newProduct];
       this._cart$.next(updated);
     }
 

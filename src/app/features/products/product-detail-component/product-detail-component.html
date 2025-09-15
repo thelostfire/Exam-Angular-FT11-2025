@@ -15,7 +15,7 @@
                     <p>{{ product.description }}</p>
                     <div class="price-container">
                         <p>€{{ product.price }}</p>
-                        <app-button-component [text]="'Ajouter au panier'"></app-button-component>
+                        <app-button-component [text]="'Ajouter au panier'" (clicked)="onAddToCart(product)" [disabled]="!product.isAvailable"></app-button-component>
                     </div>
                 </div>
             </article>

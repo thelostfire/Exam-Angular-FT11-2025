@@ -1,0 +1,21 @@
+section {
+    background-color: black;
+    height: 100vh;
+
+    a {
+        padding: 6px 32px;
+        background-color: #f89a2f;
+        border-radius: 6px;
+    }
+
+    img {
+        padding-top: 6rem;
+        margin: auto;
+        width: 80px;
+    }
+    
+    h1 {
+        margin: auto;
+        padding: 3rem 0;
+    }
+}

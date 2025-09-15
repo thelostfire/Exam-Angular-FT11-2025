@@ -2,7 +2,7 @@ import { Component, computed, inject } from '@angular/core';
 import { CartService } from '../../../core/services/cart-service';
 import { toSignal } from '@angular/core/rxjs-interop'
 import { Product } from '../../../core/models/product';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { CartItemComponent } from '../cart-item-component/cart-item-component';
 import { CurrencyPipe } from '@angular/common';
 
@@ -14,6 +14,7 @@ import { CurrencyPipe } from '@angular/common';
 })
 export class CartComponent {
   private readonly cartService = inject(CartService)
+  private router = inject(Router);
 
   readonly cart = toSignal<Product[]>(this.cartService.cart$, {initialValue: undefined})
 
@@ -27,6 +28,11 @@ export class CartComponent {
 
   clear() {
     this.cartService.clear()
+  }
+
+  order() {
+    this.clear();
+    this.router.navigateByUrl('/confirmed');
   }
 
   trackById = (p: Product) => p.id;

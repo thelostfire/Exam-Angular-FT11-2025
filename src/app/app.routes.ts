@@ -5,6 +5,8 @@ import { RegisterComponent } from './features/auth/register-component/register-c
 import { LoginComponent } from './features/auth/login-component/login-component';
 import { PageNotFoundComponent } from './features/errors/page-not-found-component/page-not-found-component';
 import { CartComponent } from './features/cart/cart-component/cart-component';
+import { OrderConfirmationComponent } from './features/cart/order-confirmation-component/order-confirmation-component';
+import { AuthGuard } from './core/guards/auth.guard';
 
 export const routes: Routes = [
     {path: '', component: ProductListComponent},
@@ -12,5 +14,6 @@ export const routes: Routes = [
     {path: 'register', component: RegisterComponent},
     {path: 'login', component: LoginComponent},
     {path: 'checkout', component: CartComponent},
+    {path: 'confirmed', canActivate: [AuthGuard], component: OrderConfirmationComponent},
     {path: '**', component: PageNotFoundComponent}
 ];
