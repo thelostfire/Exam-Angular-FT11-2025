@@ -28,5 +28,6 @@ Les sections qui suivent sont les réponses demandées dans le sujet de l'examen
 ## Instructions
 
 - Le site utilise tailwind (https://tailwindcss.com/docs/installation/framework-guides/angular)
+- - ```npm install```  
 - Pas de configuration de la base API nécessaire
 - Pour lancer le serveur de développement, utiliser les commandes ```ng serve``` ou ```npm start```
